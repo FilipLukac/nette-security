@@ -5,11 +5,14 @@ namespace IPub\Security\Providers;
 use Nette;
 use IPub\Security\Entities;
 use IPub\Security\Exceptions;
+use Nette\SmartObject;
 
 
-class RolesProvider extends Nette\Object implements IRolesProvider
+class RolesProvider  implements IRolesProvider
 {
-	/** @var Entities\Role[] */
+    use SmartObject;
+
+    /** @var Entities\Role[] */
 	private $roles = [];
 
 

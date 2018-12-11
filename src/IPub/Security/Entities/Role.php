@@ -16,11 +16,15 @@ namespace IPub\Security\Entities;
 
 use IPub\Security\Exceptions\InvalidArgumentException;
 use Nette;
+use Nette\SmartObject;
 
 
-class Role extends Nette\Object implements IRole
+class Role  implements IRole
 {
-	/**
+    use SmartObject;
+
+
+    /**
 	 * @var string
 	 */
 	protected $name;

@@ -6,11 +6,14 @@ use Nette;
 use Nette\Security\IAuthorizator;
 use IPub\Security\Entities;
 use IPub\Security\Exceptions;
+use Nette\SmartObject;
 
 
-class Permission extends Nette\Object implements IPermission
+class Permission implements IPermission
 {
-	/** @var Entities\IResource|NULL */
+    use SmartObject;
+
+    /** @var Entities\IResource|NULL */
 	protected $resource;
 
 	/** @var string|NULL */
@@ -31,11 +34,11 @@ class Permission extends Nette\Object implements IPermission
 	public function __construct(Entities\IResource $resource = NULL, $privilege = NULL, callable $assertion = NULL)
 	{
 		if (!($resource instanceof Entities\IResource) && ($resource !== IAuthorizator::ALL)) {
-			throw new Exceptions\InvalidArgumentException('Resource must be either IResource or Nette\Security\IAuthorizator::ALL');
+			new Exceptions\InvalidArgumentException('Resource must be either IResource or Nette\Security\IAuthorizator::ALL');
 		}
 
 		if (!is_string($privilege) && ($privilege !== IAuthorizator::ALL)) {
-			throw new Exceptions\InvalidArgumentException('Privilege must be either string or Nette\Security\IAuthorizator::ALL');
+			new Exceptions\InvalidArgumentException('Privilege must be either string or Nette\Security\IAuthorizator::ALL');
 		}
 
 		$this->resource = $resource;

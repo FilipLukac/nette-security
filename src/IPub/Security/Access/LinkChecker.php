@@ -18,10 +18,14 @@ use Nette;
 use Nette\Application;
 use Nette\Application\UI;
 use Nette\Security as NS;
+use Nette\SmartObject;
 
-class LinkChecker extends Nette\Object implements IChecker
+class LinkChecker  implements IChecker
 {
-	/**
+    use SmartObject;
+
+
+    /**
 	 * @var Application\IPresenterFactory
 	 */
 	protected $presenterFactory;
