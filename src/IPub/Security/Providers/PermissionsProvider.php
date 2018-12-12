@@ -5,11 +5,14 @@ namespace IPub\Security\Providers;
 use Nette;
 use IPub\Security\Entities;
 use IPub\Security\Exceptions;
+use Nette\SmartObject;
 
 
-class PermissionsProvider extends Nette\Object implements IPermissionsProvider
+class PermissionsProvider  implements IPermissionsProvider
 {
-	/** @var Entities\Resource[] */
+    use SmartObject;
+
+    /** @var Entities\Resource[] */
 	private $resources = [];
 
 	/** @var Entities\Permission[] */

@@ -3,11 +3,15 @@
 namespace IPub\Security\Entities;
 
 use Nette;
+use Nette\SmartObject;
 
 
-class Resource extends Nette\Object implements IResource
+class Resource  implements IResource
 {
-	/** @var string */
+    use SmartObject;
+
+
+    /** @var string */
 	private $name;
 
 	/** @var IResource */
