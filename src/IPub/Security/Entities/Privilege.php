@@ -23,14 +23,14 @@ class Privilege implements IPrivilege
 
 
     /**
-     * @param string $value
+     * @param string|IAuthorizator $value
      * @param string|NULL $name
      * @param Permission $permission
      */
     public function __construct($value, $permission, $name = null)
     {
         if (!is_string($value) && ($value !== IAuthorizator::ALL)) {
-           throw new Exceptions\InvalidArgumentException('Privilege must be either string or Nette\Security\IAuthorizator::ALL');
+           throw new Exceptions\InvalidArgumentException('Privilege value must be either string or Nette\Security\IAuthorizator::ALL');
         }
         if (!$permission instanceof Permission) {
             throw new Exceptions\InvalidArgumentException('Permission must be of type Permission');

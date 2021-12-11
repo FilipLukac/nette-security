@@ -101,8 +101,8 @@ class Permission implements IPermission
      */
     public function setNewPrivilege($privilege){
 
-        if (!($privilege instanceof Privilege) && ($privilege !== IAuthorizator::ALL)) {
-            throw new Exceptions\InvalidArgumentException('Privilege must be either string or Nette\Security\IAuthorizator::ALL');
+        if (!($privilege instanceof Privilege)) {
+            throw new Exceptions\InvalidArgumentException('Privilege must be of type Privilege');
         }
         $this->privilege = $privilege->getValue();
 
