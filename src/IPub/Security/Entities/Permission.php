@@ -95,6 +95,29 @@ class Permission implements IPermission
 	}
 
 
+    /**
+     * @param Privilege $privilege
+     * @return $this
+     */
+    public function setNewPrivilege($privilege){
+
+        if (!($privilege instanceof Privilege)) {
+            throw new Exceptions\InvalidArgumentException('Privilege must be of type Privilege');
+        }
+        $this->privilege = $privilege->getValue();
+
+        return $this;
+    }
+
+    /**
+     * @return Privilege
+     */
+    public function getNewPrivilege()
+    {
+        return new Privilege($this->privilege, $this);
+    }
+
+
 	/**
 	 * @return string
 	 */
@@ -104,4 +127,5 @@ class Permission implements IPermission
 
 		return $ky;
 	}
+
 }
