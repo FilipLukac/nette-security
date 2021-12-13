@@ -25,6 +25,7 @@ Or you can specify dependency by hand:
 }
 ```
 
+
 ## Setup
 After installation you need to register the DI extension. If your'e using Nette&nbsp;2.3, you can do that by configuration:
 
