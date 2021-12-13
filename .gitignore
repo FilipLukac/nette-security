@@ -1,4 +1,7 @@
 ## Numerous always-ignore items
+.IDEA
+.AppFlow
+.Visual
 *.diff
 *.err
 *.log
