@@ -4,6 +4,7 @@ env:
   - NETTE=default
   - NETTE=~2.2.0
   - NETTE=~2.3.0
+  - NETTE=~2.4.0
 
 php:
   - 5.4
